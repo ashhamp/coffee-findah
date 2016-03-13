@@ -1,0 +1,8 @@
+
+<ul>
+  <% @results_zip.data['results'].each do |shop| %>
+  <li>
+    <%= shop['name'] %>: <%= shop['vicinity'] %>
+  </li>
+  <% end %>
+</ul>
