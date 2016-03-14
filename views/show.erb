@@ -1,0 +1,22 @@
+
+<h2><%= @results.data['result']['name'] %></h2>
+<ul>
+  <li>
+    <%= @results.data['result']['formatted_address'] %>
+  </li>
+  <li>
+    <%= @results.data['result']['formatted_phone_number'] %>
+  </li>
+  <li>
+    <a href="<%= @results.data['result']['website']%>">website</a>
+  </li>
+  <li>
+    <a href="<%= @results.data['result']['url'] %>">map</a>
+  </li>
+</ul>
+<ul>
+
+  <% @results.data['result']['opening_hours']['weekday_text'].each do |day| %>
+    <li> <%= day %> </li>
+    <% end %>
+</ul>

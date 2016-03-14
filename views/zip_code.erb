@@ -1,8 +1,8 @@
-
+<h2>Coffee Shops near <%= @zip_code %></h2>
 <ul>
   <% @results_zip.data['results'].each do |shop| %>
   <li>
-    <%= shop['name'] %>: <%= shop['vicinity'] %>
+    <a href="/<%= shop['place_id']%>"><%= shop['name'] %></a>: <%= shop['vicinity'] %>
   </li>
   <% end %>
 </ul>

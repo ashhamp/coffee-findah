@@ -4,13 +4,17 @@ require 'dotenv'
 Dotenv.load
 require 'pry'
 
-class CoffeeShop
+class CoffeeShopLocations
   attr_reader :lat, :lng, :data
 
   def initialize(lat, lng)
     @lat = lat
     @lng = lng
     @data = create_coffee_shop_data
+  end
+
+  def place_id
+    @data['results']
   end
 
   private
@@ -24,5 +28,4 @@ class CoffeeShop
     key = ENV["GOOGLE_PLACES_API_KEY"]
     URI("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat},#{lng}&radius=1000&keyword=coffee&key=#{key}")
    end
-
 end
