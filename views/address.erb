@@ -1,8 +1,16 @@
 <h2>Coffee Shops near <%= @street %>, <%= @town %>, <%= @state %></h2>
-<ul>
-  <% @results_address.data['results'].each do |shop| %>
-  <li>
-    <a href="/<%= shop['place_id']%>"><%= shop['name'] %></a>: <%= shop['vicinity'] %>
-  </li>
-  <% end %>
-</ul>
+<div class="text-center">
+  <div class="small-12 medium-6 columns">
+    <dl>
+      <% @results_address.data['results'].each do |shop| %>
+      <dt>
+        <a href="/coffee_shops/<%= shop['place_id']%>">
+          <%= shop['name'] %>
+        </a>
+      </dt>
+      <dd><%= shop['vicinity'] %></dd>
+      </>
+      <% end %>
+    </dl>
+  </div>
+</div>

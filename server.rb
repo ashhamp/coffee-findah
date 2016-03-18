@@ -6,12 +6,15 @@ require_relative 'lib/geocode_zip_code'
 require 'pry'
 
 get '/' do
-
-  erb :index
-
+  redirect '/coffee_shops'
 end
 
-get '/coffee-shops-by-address' do
+get '/coffee_shops' do
+  erb :index
+end
+
+
+get '/coffee_shops/by_address' do
 
   @street = params['street']
   @town = params['town']
@@ -23,7 +26,7 @@ get '/coffee-shops-by-address' do
   erb :address
 end
 
-get '/coffee-shops-by-zip' do
+get '/coffee_shops/by_zip' do
 
   @zip_code = params['zip_code']
 
@@ -33,10 +36,12 @@ get '/coffee-shops-by-zip' do
   erb :zip_code
 end
 
-get '/:place_id' do
+get '/coffee_shops/:place_id' do
   @place_id = params['place_id']
 
   @results = CoffeeShopDetails.new(@place_id)
+
+  @hours = @results.data['result']['opening_hours']
 
   erb :show
 end

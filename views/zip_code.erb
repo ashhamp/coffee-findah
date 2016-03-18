@@ -1,8 +1,18 @@
-<h2>Coffee Shops near <%= @zip_code %></h2>
-<ul>
-  <% @results_zip.data['results'].each do |shop| %>
-  <li>
-    <a href="/<%= shop['place_id']%>"><%= shop['name'] %></a>: <%= shop['vicinity'] %>
-  </li>
-  <% end %>
-</ul>
+
+<div class="zip_results_container">
+  <div class="text-center">
+    <div>
+      <h2>Coffee near <%= @zip_code %></h2>
+      <dl>
+        <% @results_zip.data['results'].each do |shop| %>
+        <dt>
+          <a href="/coffee_shops/<%= shop['place_id']%>">
+            <%= shop['name'] %>
+          </a>
+        </dt>
+          <dd> <%= shop['vicinity'] %> </dd>
+        <% end %>
+        </dl>
+      </div>
+    </div>
+  </div>

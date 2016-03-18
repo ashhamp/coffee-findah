@@ -12,7 +12,7 @@ require 'pry'
 
    def uri
     key = ENV["GOOGLE_PLACES_API_KEY"]
-    URI("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=42.3515662,-71.0613815&radius=1000&keyword=coffee&key=#{key}")
+    URI("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=42.3600825,-71.0588801&radius=2000&keyword=dogpark&key=#{key}")
    end
 binding.pry
 create_coffee_shop_data['results'].each do |shop|

@@ -26,6 +26,6 @@ class CoffeeShopLocations
 
    def uri
     key = ENV["GOOGLE_PLACES_API_KEY"]
-    URI("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat},#{lng}&radius=1000&keyword=coffee&key=#{key}")
+    URI("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat},#{lng}&rankby=distance&keyword=coffee&key=#{key}")
    end
 end
