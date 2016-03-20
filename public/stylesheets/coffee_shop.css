@@ -79,6 +79,7 @@ div.top-bar {
   padding-right: 10px;
   font-size: 30px;
   color: #331a00;
+  src: url(http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
 }
 
 #zip-search {
