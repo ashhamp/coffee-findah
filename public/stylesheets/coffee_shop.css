@@ -22,24 +22,29 @@ div.top-bar {
   background: none;
   color: #331a00;
   width: 100%;
+  padding: 0;
 }
 
 #title-link {
   color: #331a00;
+  text-align: center;
 }
 
-.coffee-icon {
+/*.coffee-icon {
   position: absolute;
   right: 0px;
   top: -5px;
   font-size: 45px;
-}
+}*/
 
 .bar-text {
   font-size: 45px;
   font-family: monospace;
   font-weight: bold;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .search-container {
