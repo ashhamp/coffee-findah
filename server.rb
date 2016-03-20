@@ -19,7 +19,7 @@ get '/coffee_shops/by_address' do
   @town = params['town']
   @state = params['state']
 
-  unless @town.strip/empty? || @state.strip.empty?
+  unless @town.strip.empty? || @state.strip.empty?
     @geocode_address = GeoCodeAddress.new(@street, @town, @state)
     @results_address = CoffeeShopLocations.new(@geocode_address.lat, @geocode_address.lng)
   end
