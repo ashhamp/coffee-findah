@@ -66,7 +66,7 @@ div.top-bar {
 #magnifying-zip {
   position: absolute;
   right: 0;
-  top: -5px;
+  top: -3px;
   padding-right: 25px;
   font-size: 30px;
   color: #331a00;
@@ -75,11 +75,10 @@ div.top-bar {
 #magnifying-address {
   position: absolute;
   right: 0;
-  top: -5px;
+  top: -3px;
   padding-right: 10px;
   font-size: 30px;
   color: #331a00;
-  src: url(http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
 }
 
 #zip-search {
