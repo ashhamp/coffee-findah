@@ -2,7 +2,6 @@ require "net/http"
 require "json"
 require 'dotenv'
 Dotenv.load
-require 'pry'
 
 class CoffeeShopDetails
   attr_reader :place_id, :data

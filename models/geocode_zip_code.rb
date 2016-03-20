@@ -2,7 +2,6 @@ require "net/http"
 require "json"
 require 'dotenv'
 Dotenv.load
-require 'pry'
 
 class GeoCodeZipCode
   attr_reader :data, :zip_code
