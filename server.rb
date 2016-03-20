@@ -3,7 +3,6 @@ require_relative 'lib/coffee_shop_locations'
 require_relative 'lib/coffee_shop_details'
 require_relative 'lib/geocode_address'
 require_relative 'lib/geocode_zip_code'
-require 'pry'
 
 get '/' do
   redirect '/coffee_shops'
