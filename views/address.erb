@@ -1,16 +1,18 @@
-<h2>Coffee Shops near <%= @street %>, <%= @town %>, <%= @state %></h2>
-<div class="text-center">
-  <div class="small-12 medium-6 columns">
-    <dl>
-      <% @results_address.data['results'].each do |shop| %>
-      <dt>
-        <a href="/coffee_shops/<%= shop['place_id']%>">
-          <%= shop['name'] %>
-        </a>
-      </dt>
-      <dd><%= shop['vicinity'] %></dd>
-      </>
-      <% end %>
-    </dl>
+<div class="row small-10 medium-5 columns results_container">
+  <div class="small-12 columns callout results-text">
+
+   <h5>Coffee Shops near <%= @street %>, <%= @town %>, <%= @state %></h5>
+      <dl>
+        <% @results_address.data['results'].each do |shop| %>
+        <dt>
+          <a href="/coffee_shops/<%= shop['place_id']%>">
+            <%= shop['name'] %>
+          </a>
+        </dt>
+        <dd><%= shop['vicinity'] %></dd>
+        </>
+        <% end %>
+      </dl>
+      <a href="/coffee_shops"> <button type="text" name="button"> Find More Coffee</button> </a>
   </div>
 </div>

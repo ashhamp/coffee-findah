@@ -1,26 +1,29 @@
+<div class="row small-10 medium-5 columns show-container">
+  <div class="small-12 columns callout show-text">
+    <h2><%= @results.data['result']['name'] %></h2>
+    <ul>
+      <li class="show-list">
+        <%= @results.data['result']['formatted_address'] %>
+      </li>
+      <li class="show-list-inline">
+        <%= @results.data['result']['formatted_phone_number'] %>
+      </li>
 
-<h2><%= @results.data['result']['name'] %></h2>
-<ul>
-  <li>
-    <%= @results.data['result']['formatted_address'] %>
-  </li>
-  <li>
-    <%= @results.data['result']['formatted_phone_number'] %>
-  </li>
+        <li class="show-list-inline">
+          <a href="<%= @results.data['result']['website']%>">website</a>
+        </li>
 
-    <li>
-      <a href="<%= @results.data['result']['website']%>">website</a>
-    </li>
+      <li class="show-list-inline">
+        <a href="<%= @results.data['result']['url'] %>">map</a>
+      </li>
+    </ul>
 
-  <li>
-    <a href="<%= @results.data['result']['url'] %>">map</a>
-  </li>
-</ul>
-
-<ul>
-  <% unless @hours.nil? %>
-    <% @hours['weekday_text'].each do |day| %>
-      <li> <%= day %> </li>
-    <% end %>
-  <% end %>
-</ul>
+    <ul>
+      <% unless @hours.nil? %>
+        <% @hours['weekday_text'].each do |day| %>
+          <li class="show-list"> <%= day %> </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

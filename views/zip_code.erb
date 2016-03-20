@@ -1,8 +1,7 @@
 
-<div class="zip_results_container">
-  <div class="text-center">
-    <div>
-      <h2>Coffee near <%= @zip_code %></h2>
+<div class="row small-10 medium-5 columns results_container">
+  <div class="small-12 columns callout results-text">
+      <h5>Coffee near <%= @zip_code %></h5>
       <dl>
         <% @results_zip.data['results'].each do |shop| %>
         <dt>
@@ -13,6 +12,6 @@
           <dd> <%= shop['vicinity'] %> </dd>
         <% end %>
         </dl>
-      </div>
+        <a href="/coffee_shops"> <button type="text" name="button"> Find More Coffee</button> </a>
     </div>
   </div>

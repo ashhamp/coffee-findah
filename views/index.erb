@@ -1,34 +1,51 @@
 
-<div class="search-container">
-
-
-  <div class="row small-9 medium-11 columns">
-    <!-- <div id="zip_callout"> -->
-      <h5>
-        Search by zip code:
-      </h5>
+<div class="row small-10 medium-7 columns search-container">
+  <div class="small-12 columns callout" id="zip-search">
+    <div class="small-12 columns" id="zip-header">
+      <h5 class="search-by">Search By Zip Code</h5>
+    </div>
+    <div class="small-12" id="zip-input">
       <form action="/coffee_shops/by_zip" method="get">
-        <label for="zip_code">Zip code</label>
-        <input type="text" name="zip_code" value="<%= @zip_code %>">
-        <input class="search-button" type="submit" name="submit" value="Search">
+        <ul>
+          <div class="small-12 columns" id="zip-list">
+            <li class="search-list">
+              <input type="text" placeholder="ZIP CODE" name="zip_code" id="search-text-input" required>
+                <div id="magnifying-zip">
+                  <button type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </li>
+          </div>
+        </ul>
       </form>
     </div>
+  </div>
 
-  <div class="row small-9 medium-11 columns">
-    <!-- <div class="secondary callout"> -->
-      <h5>
-        Search by address:
-      </h5>
+  <div class="small-12 columns callout address-search">
+    <div class="small-12 columns" id="address-header">
+      <h5 class="search-by">Search By Address</h5>
+    </div>
+    <div class="small-12 columns">
       <form action="/coffee_shops/by_address" method="get">
-        <label for="street">Street Address</label>
-        <input  type="text" name="street" value="<%= @street %>">
-
-        <label for="town">Town/City</label>
-        <input type="text" name="town" value="<%= @town %>">
-
-        <label for="state">State</label>
-        <input type="text" name="state" value="<%= @state %>">
-        <input class="search-button" type="submit" name="submit" value="Search">
+        <ul>
+          <li class="search-list" id="street-box">
+            <input  class="search-box-address" type="text" name="street" placeholder="STREET ADDRESS" value="<%= @street %>">
+          </li>
+          <li class="search-list" id="town-box">
+            <input class="search-box-address" type="text" name="town" placeholder="TOWN/CITY" value="<%= @town %>" required>
+          </li>
+          <div id="address-search-relative">
+            <li class="search-list" id="state-box">
+              <input class="search-box-address" type="text" name="state" placeholder="STATE" value="<%= @state %>" required>
+            </li>
+              <div id="magnifying-address">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+              </div>
+          </div>
+        </ul>
       </form>
     </div>
   </div>

@@ -20,8 +20,10 @@ get '/coffee_shops/by_address' do
   @town = params['town']
   @state = params['state']
 
-  @geocode_address = GeoCodeAddress.new(@street, @town, @state)
-  @results_address = CoffeeShopLocations.new(@geocode_address.lat, @geocode_address.lng)
+  unless @town.strip/empty? || @state.strip.empty?
+    @geocode_address = GeoCodeAddress.new(@street, @town, @state)
+    @results_address = CoffeeShopLocations.new(@geocode_address.lat, @geocode_address.lng)
+  end
 
   erb :address
 end
@@ -30,8 +32,10 @@ get '/coffee_shops/by_zip' do
 
   @zip_code = params['zip_code']
 
-  @geocode_zip = GeoCodeZipCode.new(@zip_code)
-  @results_zip = CoffeeShopLocations.new(@geocode_zip.lat, @geocode_zip.lng)
+  unless @zip_code.strip.empty?
+    @geocode_zip = GeoCodeZipCode.new(@zip_code)
+    @results_zip = CoffeeShopLocations.new(@geocode_zip.lat, @geocode_zip.lng)
+  end
 
   erb :zip_code
 end
