@@ -1,19 +1,30 @@
-<div class="row small-10 medium-5 columns results_container">
-  <div class="small-12 columns callout results-text">
-    <div class="header-results">
-      <h5>Coffee Shops near <%= @street %>, <%= @town %>, <%= @state %></h5>
+<div class="row small-11 columns results_container">
+  <div class="small-12 columns results-text">
+    <div class="small-12 columns" id="sticky-relative" data-sticky-container>
+      <div class="small-12 columns sticky" data-sticky data-margin-top="4.3">
+    <div class="zip-result-header small-6 small-centered columns">
+      <p>
+        Coffee Near <%= @street %>
+      </p>
     </div>
-      <dl>
+  </div>
+</div>
+    <table class="results-table">
+      <tbody>
         <% @results_address.data['results'].each do |shop| %>
-        <dt>
-          <a href="/coffee_shops/<%= shop['place_id']%>">
-            <%= shop['name'] %>
-          </a>
-        </dt>
-        <dd><%= shop['vicinity'] %></dd>
-        </>
+        <tr class="inline-list">
+          <td>
+            <a href="/coffee_shops/<%= shop['place_id']%>" class="name-link">
+              <%= shop['name'] %>
+            </a>
+          </td>
+          <td>
+            <%= shop['vicinity'] %>
+          </td>
+        </tr>
         <% end %>
-      </dl>
-      <a href="/coffee_shops"> <button type="text" name="button"> Find More Coffee</button> </a>
+      </tbody>
+    </table>
+    <a href="/coffee_shops"> <button class="search-more" type="text" name="button"> Find More Coffee</button> </a>
   </div>
 </div>

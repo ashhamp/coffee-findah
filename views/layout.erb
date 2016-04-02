@@ -6,21 +6,26 @@
     <title>Coffee Findah</title>
     <link rel="stylesheet" href="/stylesheets/foundation.min.css">
     <link rel="stylesheet" href="/stylesheets/coffee_shop.css">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/show.css">
+    <link href='https://fonts.googleapis.com/css?family=Special+Elite|Monda|Source+Code+Pro' rel='stylesheet' type='text/css'>
   </head>
-
-
   <body>
-    <div class="small-12 columns top-bar">
-      <div class="small-12 columns top-bar-text">
-        <a href="/coffee_shops" id="title-link"><h1 class="bar-text">Coffee Findah</h1></a>
+    <div class="small-12 columns sticky-top" data-sticky-container>
+      <div class="small-12 columns sticky-top" data-sticky data-margin-top="0">
+        <div class="row small-12 columns top-bar" >
+          <div class="small-12 columns top-bar-text">
+            <a href="/coffee_shops" id="title-link"><h1 class="bar-text">COFFEE FINDAH</h1></a>
+            <div class="lower-border">
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      </div>
 
     <%= yield %>
 
-
-    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/custom.js"></script>
     <script src="/js/foundation.min.js"></script>
     <script src="js/foundation/foundation.topbar.js"></script>
 

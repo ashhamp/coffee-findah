@@ -1,47 +1,49 @@
 
-<div class="row small-12 medium-7 columns search-container">
-  <div class="small-12 columns callout" id="zip-search">
+<div class="row small-11 small-centered columns search-container" id="search-wrapper">
+  <div class="small-12 columns" id="zip-search">
     <div class="small-12 columns" id="zip-header">
-      <h5 class="search-by">Search By Zip Code</h5>
-    </div>
-    <div class="small-12" id="zip-input">
-      <form action="/coffee_shops/by_zip" method="get">
-        <ul>
-          <div class="small-12 columns" id="zip-list">
-            <li class="search-list">
-              <input type="text" placeholder="ZIP CODE" name="zip_code" id="search-text-input" required>
-                <div id="magnifying-zip">
-                  <input type="image" src="../images/toolbar_find.png"/>
-                </div>
-              </li>
+    <fieldset class="each-search-wrapper">
+      <legend>Nearest Coffee By Zip</legend>
+        <form action="/coffee_shops/by_zip" method="get">
+            <div id="zip-input">
+              <div>
+                <input type="text" placeholder="ZIP CODE" name="zip_code" required>
+              </div>
+              <div id="magnifying-zip">
+                <button class="button zip-button" type="submit" name="button">SEARCH</button>
+              </div>
           </div>
-        </ul>
       </form>
+          </fieldset>
     </div>
   </div>
 
-  <div class="small-12 columns callout address-search">
+
+  <div class="small-12 columns" id="address-search">
     <div class="small-12 columns" id="address-header">
-      <h5 class="search-by">Search By Address</h5>
-    </div>
-    <div class="small-12 columns">
+      <!-- <h5 class="search-by">Search By Address</h5> -->
+    <!-- </div> -->
+    <!-- <div class="small-12 columns"> -->
+    <fieldset class="each-search-wrapper">
+      <legend>Nearest Coffee By Address</legend>
       <form action="/coffee_shops/by_address" method="get">
-        <ul>
-          <li class="search-list" id="street-box">
+
+          <div class="search-list" id="street-box">
             <input  class="search-box-address" type="text" name="street" placeholder="STREET ADDRESS" value="<%= @street %>">
-          </li>
-          <li class="search-list" id="town-box">
+          </div>
+          <div class="search-list" id="town-box">
             <input class="search-box-address" type="text" name="town" placeholder="TOWN/CITY" value="<%= @town %>" required>
-          </li>
+          </div>
           <div id="address-search-relative">
-            <li class="search-list" id="state-box">
+            <div class="search-list" id="state-box">
               <input class="search-box-address" type="text" name="state" placeholder="STATE" value="<%= @state %>" required>
-            </li>
+            </div>
               <div id="magnifying-address">
-                  <input type="image" src="../images/toolbar_find.png"/>
+                  <!-- <input type="image" src="../images/toolbar_find.png"/> -->
+                  <button class="button zip-button" type="submit" name="button">SEARCH</button>
               </div>
           </div>
-        </ul>
       </form>
+        </fieldset>
     </div>
   </div>

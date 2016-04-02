@@ -1,29 +1,48 @@
-<div class="row small-10 medium-5 columns show-container">
-  <div class="small-12 columns callout show-text">
-    <h2><%= @results.data['result']['name'] %></h2>
-    <ul>
-      <li class="show-list">
-        <%= @results.data['result']['formatted_address'] %>
-      </li>
-      <li class="show-list-inline">
-        <%= @results.data['result']['formatted_phone_number'] %>
-      </li>
 
-        <li class="show-list-inline">
-          <a href="<%= @results.data['result']['website']%>">website</a>
-        </li>
-
-      <li class="show-list-inline">
-        <a href="<%= @results.data['result']['url'] %>">map</a>
-      </li>
-    </ul>
-
-    <ul>
-      <% unless @hours.nil? %>
-        <% @hours['weekday_text'].each do |day| %>
-          <li class="show-list"> <%= day %> </li>
-        <% end %>
-      <% end %>
-    </ul>
+<div class="row small-11 columns show-container">
+  <div class="small-12 columns results-text">
+    <div class="zip-result-header row small-12 small-centered columns">
+      <p>
+        <%= @results.data['result']['name'] %>
+      </p>
+    </div>
   </div>
+  <div class="small-12 columns results-text">
+    <div class="zip-result-header small-12 small-centered columns" id="show-result-address">
+      <p>
+        <%= @results.data['result']['formatted_address'] %>
+      </p>
+      <p class="inline-p">
+          phone: <%= @results.data['result']['formatted_phone_number'] %>
+      </p>
+      <p class="inline-p">
+        <a href="<%= @results.data['result']['website']%>" class="name-link">website</a>
+      </p>
+      <p class="inline-p">
+        <a href="<%= @results.data['result']['url'] %>" class="name-link">map</a>
+      </p>
+
+      <table class="results-table">
+        <tbody>
+        <% unless @hours.nil? %>
+          <% @hours['weekday_text'].each do |day| %>
+          <tr class="inline-list">
+              <td class="show-list"> <%= day %> </td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="small-12 columns">
+      <div class="small-6 columns" id="no-padding-right-button">
+        <a> <button class="search-more" id="back-coffee" type="text" name="button"> Back</button> </a>
+      </div>
+      <div class="small-6 columns" id="no-padding-left-button">
+        <a href="/coffee_shops"> <button class="search-more" id="more-coffee" type="text" name="button">Search Again</button> </a>
+      </div>
+    </div>
+
+  </div>
+
 </div>
