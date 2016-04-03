@@ -148,5 +148,8 @@ p.second-bar-header {
 .sticky-relative {
   margin: 0;
   padding: 0;
-  /*padding-bottom: 5px;*/
+}
+
+p {
+  margin-bottom: 2px;
 }
