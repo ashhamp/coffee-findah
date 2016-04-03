@@ -1,29 +1,30 @@
-
-<div class="row small-11 columns results_container">
-  <div class="small-12 columns results-text">
-    <div class="small-12 columns" id="sticky-relative" data-sticky-container>
-      <div class="small-12 columns sticky" data-sticky data-margin-top="4.3">
-    <div class="zip-result-header small-6 small-centered columns">
-      <p>Coffee Near <%= @zip_code %></p>
+<div class="small-12 columns all-results-container">
+  <div class="small-12 columns sticky-relative" data-sticky-container>
+    <div class="small-12 columns sticky-inner sticky" data-sticky data-sticky-on="small" data-margin-top="4.3">
+      <div class="zip-result-header small-6 small-centered columns">
+        <p class="second-bar-header">Coffee Near <%= @zip_code %></p>
+      </div>
     </div>
   </div>
-</div>
-    <table class="results-table">
-      <tbody>
-      <% @results_zip.data['results'].each do |shop| %>
-        <tr class="inline-list">
-          <td>
-            <a href="/coffee_shops/<%= shop['place_id']%>" class="name-link">
-            <%= shop['name'] %>
-            </a>
-          </td>
-          <td class="inline-list">
-            <%= shop['vicinity'] %>
-          <td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="row small-11 columns results_container">
+    <div class="small-12 columns results-text">
+      <table class="results-table">
+        <tbody>
+          <% @results_zip.data['results'].each do |shop| %>
+            <tr class="inline-list">
+              <td>
+                <a href="/coffee_shops/<%= shop['place_id']%>" class="name-link">
+                <%= shop['name'] %>
+                </a>
+              </td>
+              <td class="inline-list">
+                <%= shop['vicinity'] %>
+              <td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
       <a href="/coffee_shops"> <button class="search-more" type="text" name="button"> Find More Coffee</button> </a>
     </div>
   </div>
+</div>
